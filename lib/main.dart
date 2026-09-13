@@ -3,7 +3,6 @@ import 'data/full_content.dart';
 import 'models/content_models.dart';
 import 'services/handwriting_analyzer.dart';
 import 'services/persian_joiner.dart';
-import 'services/progress_store.dart';
 
 void main()=>runApp(const AlefbaApp());
 class AlefbaApp extends StatelessWidget{const AlefbaApp({super.key});@override Widget build(BuildContext c)=>MaterialApp(debugShowCheckedModeBanner:false,title:'جزیره الفبا',theme:ThemeData(useMaterial3:true,fontFamily:'Vazir',colorScheme:ColorScheme.fromSeed(seedColor:const Color(0xff8b4a68)),scaffoldBackgroundColor:const Color(0xfffffbf4)),home:const HomePage());}

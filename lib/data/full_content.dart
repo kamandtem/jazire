@@ -27,7 +27,7 @@ const allLessons = <LessonPack>[
   LessonPack(id:22, title:'درس 22: ظ', signs:['ظ'], words:[WordItem(id:'l22-w01', text:'ظرف', firstLesson:22, segments:['ظ', 'ر', 'ف']),WordItem(id:'l22-w02', text:'عظیم', firstLesson:22, segments:['ع', 'ظ', 'ی', 'م']),], exercises:[ExerciseItem(id:'l22-ex01', type:ExerciseType.trace, prompt:'نشانهٔ ظ را دنبال کن.', lesson:22, target:'ظ'),ExerciseItem(id:'l22-ex02', type:ExerciseType.findLetter, prompt:'نشانهٔ «ظ» را پیدا کن.', lesson:22, target:'ظ', options:['ظ', 'ظ']),ExerciseItem(id:'l22-ex03', type:ExerciseType.buildWord, prompt:'واژهٔ «ظرف» را بساز.', lesson:22, target:'ظرف', options:['ظ', 'ر', 'ف']),],),
 ];
 
-const sentences_a = <String>[
+const sentencesA = <String>[
   'آب آمد.',
   'بابا آب داد.',
   'ماما آب داد.',
@@ -59,7 +59,7 @@ const sentences_a = <String>[
   'ماما بادام داد.',
   'آب با ما بود.',
 ];
-const sentences_m = <String>[
+const sentencesM = <String>[
   'من با بابا به مدرسه آمدم.',
   'مادر برای من آب آورد.',
   'ما در کلاس با هم هستیم.',
@@ -91,7 +91,7 @@ const sentences_m = <String>[
   'دریا آبی و زیبا است.',
   'مادر برای کودک قصه خواند.',
 ];
-const sentences_k = <String>[
+const sentencesK = <String>[
   'دانش‌آموز با شادی درس می‌خواند.',
   'کودکان در کلاس با هم همکاری می‌کنند.',
   'پرنده کنار درخت آواز می‌خواند.',
