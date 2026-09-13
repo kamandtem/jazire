@@ -26,5 +26,5 @@ class HandwritingAnalyzer {
     return HandwritingResult(coverage: inside, orderScore: order, connected: connected, accepted: accepted, message: message);
   }
   double _length(List<Offset> points) { var value = 0.0; for (var i = 1; i < points.length; i++) { value += (points[i] - points[i - 1]).distance; } return value; }
-  bool _hasNearbyEnds(List<StrokeSample> strokes, double radius) { for (var i = 0; i < strokes.length; i++) { for (var j = i + 1; j < strokes.length; j++) { final a = strokes[i].points.last; final b = strokes[j].points.first; if ((a - b).distance <= radius) return true; } } return false; }
+  bool _hasNearbyEnds(List<StrokeSample> strokes, double radius) { for (var i = 0; i < strokes.length; i++) { for (var j = i + 1; j < strokes.length; j++) { final a = strokes[i].points.last; final b = strokes[j].points.first; if ((a - b).distance <= radius) { return true; } } } return false; }
 }
