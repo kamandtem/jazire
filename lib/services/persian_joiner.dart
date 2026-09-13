@@ -1,6 +1,6 @@
 import 'package:characters/characters.dart';
 
-enum GlyphPosition { isolated, initial, medial, final }
+enum GlyphPosition { isolated, initial, medial, finalForm }
 class GlyphShape { const GlyphShape({required this.isolated, required this.initial, required this.medial, required this.finalShape, this.canJoinNext = true, this.canJoinPrevious = true}); final String isolated, initial, medial, finalShape; final bool canJoinNext, canJoinPrevious; }
 
 class PersianJoiner {
