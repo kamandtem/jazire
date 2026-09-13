@@ -18,13 +18,22 @@ jobs:
         run: |
           python3 - <<'PYCODE'
           from pathlib import Path
-          p = Path("android/settings.gradle")
-          s = p.read_text()
-          s = s.replace('id "org.jetbrains.kotlin.android" version "1.8.22"', 'id "org.jetbrains.kotlin.android" version "1.9.22"')
-          s = s.replace("id 'org.jetbrains.kotlin.android' version '1.8.22'", "id 'org.jetbrains.kotlin.android' version '1.9.22'")
-          p.write_text(s)
+          import re
+          settings = Path("android/settings.gradle")
+          text = settings.read_text()
+          text = re.sub(
+              r'(id\s+["\']org\.jetbrains\.kotlin\.android["\']\s+version\s+["\'])[^"\']+(["\'])',
+              r'\g<1>1.9.22\g<2>',
+              text,
+          )
+          settings.write_text(text)
+          build = Path("android/build.gradle")
+          if build.exists():
+              text = build.read_text()
+              text = re.sub(r'(kotlin_version\s*=\s*["\'])[^"\']+(["\'])', r'\g<1>1.9.22\g<2>', text)
+              build.write_text(text)
           PYCODE
-          grep -n "kotlin.android" android/settings.gradle
+          grep -RIn "org.jetbrains.kotlin.android\|kotlin_version" android
       - run: flutter pub get
       - run: dart format lib test
       - run: flutter analyze
